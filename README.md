@@ -5,8 +5,8 @@ A proxy en/decrypting..
 * ..Clash Royale
 * ..Boom Beach
 
-traffic. Useful for people developing private servers, bots and/or APIs.
-The proxy has its own Libsodium port and manages to work without heavy external libs.
+traffic. Useful for private server, bot or API devs.
+The proxy has its own Libsodium/NaCl port and manages to work without heavy external libs.
 
 ## Installation
 
