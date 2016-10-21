@@ -126,8 +126,8 @@
     <Compile Include="Helper\Extensions.cs" />
     <Compile Include="Helper\NativeCalls.cs" />
     <Compile Include="Logger\Logger.cs" />
-    <Compile Include="Logger\LogLevel.cs" />
-    <Compile Include="Logger\LogType.cs" />
+    <!--<Compile Include="Logger\LogLevel.cs" />
+    <Compile Include="Logger\LogType.cs" />-->
     <Compile Include="Networking\Client.cs" />
     <Compile Include="Networking\Packets\PacketType.cs" />
     <Compile Include="Networking\Packets\PacketDestination.cs" />
