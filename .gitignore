@@ -1,0 +1,13 @@
+﻿################################################################################
+ 	This .gitignore file prevents Git from pushing unwanted files.
+################################################################################
+
+.git
+.vs
+src/obj
+*.csproj.user
+*.pdb
+*.vshost.exe
+*.vshost.exe.config
+bin/Logs/*.log
+bin/Packets/*.*
