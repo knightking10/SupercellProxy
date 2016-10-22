@@ -11,3 +11,7 @@ src/obj
 *.vshost.exe.config
 bin/Logs/*.log
 bin/Packets/*.*
+/src/bin/Release/Logs/22-10-2016.log
+/src/bin/Release/build.log
+/src/bin/Release/SupercellProxy.exe
+/src/bin/Release/SupercellProxy.exe.config
