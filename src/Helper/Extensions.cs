@@ -13,7 +13,7 @@ namespace SupercellProxy
 {
     static class Extensions
     {
-        public static T TryGetValue<T>(this JToken token, string key)
+        public static T TryToObject<T>(this JToken token, string key)
         {
             var ttoken = token[key];
             if (ttoken == null)
@@ -144,7 +144,15 @@ namespace SupercellProxy
             return BitConverter.ToInt64(a64, 0);
         }
 
-        public static string ReadString(this BinaryReader br)
+        public static string ReadZlibString(this BinaryReader br)
+        {
+            var length = br.ReadIntWithEndian();
+            var bytes = br.ReadBytes(length);
+            //TODO: Implment.
+            return null;
+        }
+
+        public static string ReadScString(this BinaryReader br)
         {
             int lengthOfUTF8Str = br.ReadIntWithEndian();
             string UTF8Str;
