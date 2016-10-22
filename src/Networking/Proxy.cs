@@ -48,22 +48,12 @@ namespace SupercellProxy
                 Logger.CenterStr("WebAPI Port: " + Config.WebAPI_PORT);
                 Console.Write(Environment.NewLine);
 
-                // Make sure the Logs directory exists
-                if (!Directory.Exists("Logs"))
-                    Directory.CreateDirectory("Logs");
-
                 Logger.Log("Starting the WebAPI..");
                 WebAPI.Start();
 
                 // Start the proxy
                 Logger.Log("Starting the proxy..");
                 Logger.Log("Checking directories..");
-                // Check directories
-                if (!Directory.Exists("Logs"))
-                    Directory.CreateDirectory("Logs");
-                if (!Directory.Exists("Packets"))
-                    Directory.CreateDirectory("Packets");
-
 
                 // Get latest public key
                 Keys.GetPublicKey();

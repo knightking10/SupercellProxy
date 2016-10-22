@@ -9,6 +9,12 @@ namespace SupercellProxy
 {
     class Packet
     {
+        static Packet()
+        {
+            if (!Directory.Exists("Packets"))
+                Directory.CreateDirectory("Packets");
+        }
+
         private byte[] rawPacket;
         private int packetID;
         private int payloadLen;
@@ -23,7 +29,7 @@ namespace SupercellProxy
         public Packet(byte[] buf, PacketDestination d)
         {
             using (var PacketReader = new BinaryReader(new MemoryStream(buf)))
-            {           
+            {
                 this.rawPacket = buf;
                 this.destination = d;
                 this.packetID = PacketReader.ReadUShortWithEndian();
@@ -63,7 +69,7 @@ namespace SupercellProxy
             {
                 Logger.Log("Failed to export packet " + ID + " (" + ex.GetType() + ")!", LogType.EXCEPTION);
                 Logger.Log("Please check if the packet filename is valid.");
-            }         
+            }
         }
 
         /// <summary>
@@ -175,7 +181,7 @@ namespace SupercellProxy
                 return this.packetType;
             }
         }
-          
+
 
         /// <summary>
         /// Returns packet info; Used for debugging

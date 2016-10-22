@@ -14,8 +14,14 @@ namespace SupercellProxy
         EXCEPTION // An exception (i.e. NullReferenceException)
     }
 
-    class Logger
+    static class Logger
     {
+        static Logger()
+        {
+            if (!Directory.Exists("Logs"))
+                Directory.CreateDirectory("Logs");
+        }
+
         public static void CenterStr(string str)
         {
             // (window width - strlen) / 2 = center
