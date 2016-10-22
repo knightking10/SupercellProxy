@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,15 @@ namespace SupercellProxy
 {
     static class Extensions
     {
+        public static T TryGetValue<T>(this JToken token, string key)
+        {
+            var ttoken = token[key];
+            if (ttoken == null)
+                return default(T);
+
+            return ttoken.ToObject<T>();
+        }
+
         /// <summary>
         /// Makes the enum values readable
         /// </summary>

@@ -26,8 +26,10 @@ namespace SupercellProxy
         /// </summary>
         static void Main(string[] args)
         {
-            SetupConsole(args);           
-            Proxy.Start();
+            PacketDefinition.LoadAll(Game.CLASH_OF_CLANS);
+
+            //SetupConsole(args);           
+            //Proxy.Start();
         }
 
         /// <summary>

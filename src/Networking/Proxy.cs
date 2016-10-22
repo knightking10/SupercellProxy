@@ -48,13 +48,14 @@ namespace SupercellProxy
                 Logger.CenterStr("WebAPI Port: " + Config.WebAPI_PORT);
                 Console.Write(Environment.NewLine);
 
+                Logger.Log("Loading packet definitions for game..");
+                PacketDefinition.LoadAll(Config.Game);
+
                 Logger.Log("Starting the WebAPI..");
                 WebAPI.Start();
 
                 // Start the proxy
                 Logger.Log("Starting the proxy..");
-                Logger.Log("Checking directories..");
-
                 // Get latest public key
                 Keys.GetPublicKey();
 
@@ -79,9 +80,9 @@ namespace SupercellProxy
                     }
                 }).Start();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Logger.Log("Failed to start the proxy (" + ex.GetType() + ")!");        
+                Logger.Log("Failed to start the proxy (" + ex.GetType() + ")!");
             }
         }
 

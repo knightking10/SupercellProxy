@@ -23,6 +23,7 @@ namespace SupercellProxy
         private string packetType;
         private byte[] encryptedPayload;
         private byte[] decryptedPayload;
+        private PacketDefinition definition;
         private PacketDestination destination;
 
         // Constructor
@@ -43,6 +44,8 @@ namespace SupercellProxy
             // En/Decrypt payload
             this.decryptedPayload = EnDecrypt.DecryptPacket(this);
             this.encryptedPayload = EnDecrypt.EncryptPacket(this);
+
+            definition = PacketDefinition.GetDefinition(packetID);
         }
 
         // Destructor

@@ -15,3 +15,5 @@ bin/Packets/*.*
 /src/bin/Release/build.log
 /src/bin/Release/SupercellProxy.exe
 /src/bin/Release/SupercellProxy.exe.config
+
+src/packages/
