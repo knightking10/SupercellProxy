@@ -46,6 +46,11 @@ namespace SupercellProxy
             this.encryptedPayload = EnDecrypt.EncryptPacket(this);
 
             definition = PacketDefinition.GetDefinition(packetID);
+            if (definition != null)
+            {
+                using (var br = new BinaryReader(new MemoryStream(decryptedPayload)))
+                    definition.Read(br);
+            }
         }
 
         // Destructor

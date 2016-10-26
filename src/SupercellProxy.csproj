@@ -134,6 +134,8 @@
     <Compile Include="Logger\LogType.cs" />-->
     <Compile Include="Networking\Client.cs" />
     <Compile Include="Networking\Packets\PacketDefinition.cs" />
+    <Compile Include="Networking\Packets\PacketDefinition.Parsing.cs" />
+    <Compile Include="Networking\Packets\PacketDefinition.Field.cs" />
     <Compile Include="Networking\Packets\PacketType.cs" />
     <Compile Include="Networking\Packets\PacketDestination.cs" />
     <Compile Include="Networking\States\ClientState.cs" />
@@ -155,6 +157,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <Compile Include="Networking\Packets\PacketDefinition.Reading.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
